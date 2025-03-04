@@ -1,0 +1,57 @@
+---
+import AboutMeSection from "@components/AboutMeSection.astro";
+import FooterSection from "@components/FooterSection.astro";
+import HeroSection from "@components/HeroSection.astro";
+import ProjectsSection from "@components/ProjectsSection.astro";
+import TechnologiesSection from "@components/TechnologiesSection.astro";
+import MainLayout from "src/layouts/MainLayout.astro";
+---
+
+<MainLayout pageTitle="Portafolio Diego Pm 💜">
+  <main class="home_container-main">
+    <HeroSection />
+    <TechnologiesSection />
+    <ProjectsSection />
+    <AboutMeSection />
+    <FooterSection />
+  </main>
+</MainLayout>
+
+<style>
+  .home_container-main {
+    display: flex;
+    flex-direction: column;
+    min-height: max-content;
+    position: relative;
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import Lenis from "lenis";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const setUpSmoothScroll = () => {
+    // Initialize Lenis
+    const lenis = new Lenis({
+      autoRaf: true,
+      autoResize: true,
+    });
+
+    // Listen for the scroll event and log the event data
+    lenis.on("scroll", ScrollTrigger.update);
+
+    // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+    // This ensures Lenis's smooth scroll animation updates on each GSAP tick
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+    });
+
+    // Disable lag smoothing in GSAP to prevent any delay in scroll animations
+    gsap.ticker.lagSmoothing(0);
+  };
+
+  document.addEventListener("astro:page-load", () => setUpSmoothScroll);
+</script>

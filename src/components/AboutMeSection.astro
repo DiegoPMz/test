@@ -1,0 +1,439 @@
+---
+import IconMinecraft from "@assets/icons/IconMinecraft.astro";
+import IconOverwatch from "@assets/icons/IconOverwatch.astro";
+import IconValorant from "@assets/icons/IconValorant.astro";
+import imgAnime from "@assets/images/Killua-Transparent-Picture.png";
+import imgDiegoFoto from "@assets/images/imgDiegoFoto.webp";
+import imgGuitarra from "@assets/images/imgGuitarra.webp";
+import imgManhwa from "@assets/images/imgManhwa.webp";
+import { Image } from "astro:assets";
+---
+
+<section class="aboutMe-main-ctn">
+  <div class="aboutMe__overlay"></div>
+  <div class="aboutMe-content-ctn">
+    <h2 class="aboutMe-content__title">Sobre mí</h2>
+    <div class="aboutMe-content__details">
+      <Image
+        src={imgDiegoFoto}
+        class="content__details-img"
+        alt="Imagen de Diego Peralta"
+      />
+      <div class="content__details-paragraph-ctn">
+        <p class="content__details-paragraph">
+          Soy un programador de la Ciudad de México apasionado por la
+          tecnología. Ya sea ensamblando una PC desde cero, resolviendo fallas
+          en una laptop o explorando y probando nuevas tecnologías, siempre
+          encuentro una forma de sumergirme en el mundo tecnológico a lo largo
+          del día.
+        </p>
+
+        <p class="content__details-paragraph">
+          Cuando no estoy programando o investigando hardware para mi PC,
+          disfruto tocar la guitarra, ver anime, leer mangas, manhuas y jugar
+          videojuegos.
+        </p>
+      </div>
+    </div>
+    <div class="aboutMe-content-sliders-ctn">
+      <div class="aboutMe-content-slider">
+        <div class="content-slider__item">
+          <IconValorant />
+        </div>
+        <Image src={imgAnime} class="content-slider__item" alt="" />
+        <Image src={imgGuitarra} class="content-slider__item" alt="" />
+        <div class="content-slider__item">
+          <IconOverwatch />
+        </div>
+        <div class="content-slider__item">
+          <IconMinecraft />
+        </div>
+
+        <Image
+          src={imgManhwa}
+          class="content-slider__item"
+          alt="Imagen de Diego Peralta"
+        />
+      </div>
+      <div aria-hidden="true" class="aboutMe-content-slider">
+        <div class="content-slider__item">
+          <IconValorant />
+        </div>
+        <Image src={imgAnime} class="content-slider__item" alt="" />
+        <Image src={imgGuitarra} class="content-slider__item" alt="" />
+        <div class="content-slider__item">
+          <IconOverwatch />
+        </div>
+        <div class="content-slider__item">
+          <IconMinecraft />
+        </div>
+
+        <Image
+          src={imgManhwa}
+          class="content-slider__item"
+          alt="Imagen de Diego Peralta"
+        />
+      </div>
+      <div aria-hidden="true" class="aboutMe-content-slider">
+        <div class="content-slider__item">
+          <IconValorant />
+        </div>
+        <Image src={imgAnime} class="content-slider__item" alt="" />
+        <Image src={imgGuitarra} class="content-slider__item" alt="" />
+        <div class="content-slider__item">
+          <IconOverwatch />
+        </div>
+        <div class="content-slider__item">
+          <IconMinecraft />
+        </div>
+
+        <Image
+          src={imgManhwa}
+          class="content-slider__item"
+          alt="Imagen de Diego Peralta"
+        />
+      </div>
+    </div>
+
+    <div class="aboutMe-content__closing-message-ctn">
+      <p class="aboutMe-content__closing-message">
+        Gracias por visitar mi portafolio, ¡espero que lo que has visto te haya
+        resultado interesante!
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .aboutMe-main-ctn {
+    min-height: 100dvh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--bg-color-main);
+
+    position: relative;
+    top: 0;
+    z-index: 40;
+  }
+  .aboutMe__overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: -1;
+    background-color: black;
+
+    background-image: url(../assets/gradients/home-gradient-aboutMe-sm.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+  }
+
+  .aboutMe-content-ctn {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+
+    padding: 60px 0 100px 0;
+  }
+
+  .aboutMe-content__title {
+    color: var(--txt-color-t);
+    font-size: 30px;
+    font-weight: 500;
+    text-align: left;
+    text-wrap: pretty;
+
+    padding-bottom: 60px;
+  }
+
+  .aboutMe-content__details {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-bottom: 50px;
+  }
+  .content__details-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .content__details-paragraph,
+  .aboutMe-content__closing-message {
+    width: 100%;
+    color: var(--txt-color-p);
+    font-size: 18px;
+    text-align: center;
+    font-weight: 400;
+    text-wrap: pretty;
+  }
+
+  .aboutMe-content-sliders-ctn {
+    width: 100%;
+    display: inline-flex;
+    position: relative;
+    overflow: hidden;
+
+    mask-image: linear-gradient(
+      90deg,
+      transparent,
+      var(--bg-color-main),
+      transparent
+    );
+  }
+  .aboutMe-content-sliders-ctn:hover {
+    .aboutMe-content-slider {
+      animation-play-state: paused;
+    }
+  }
+
+  .aboutMe-content-slider {
+    --width: 50px;
+    --height: 50px;
+    --i-gap: 30px;
+    --quantity: 6;
+
+    width: 100%;
+    min-width: calc(
+      var(--width) * var(--quantity) + (var(--quantity) * var(--i-gap))
+    );
+    display: flex;
+    gap: var(--i-gap);
+
+    animation: infinite-slider 28s linear infinite;
+    animation-play-state: var(--hover-animation);
+
+    .content-slider__item {
+      width: var(--width);
+      height: var(--height);
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    & img {
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+    }
+
+    .content-slider__item:nth-child(1),
+    .content-slider__item:nth-child(4) {
+      scale: 1.2;
+    }
+
+    .content-slider__item:nth-child(2) {
+      background-color: rgb(29, 29, 29);
+    }
+  }
+
+  .aboutMe-content__closing-message-ctn {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 12px;
+    padding: 16px 12px;
+
+    margin-top: 100px;
+    position: relative;
+  }
+
+  .aboutMe-content__closing-message-ctn::after {
+    content: "";
+    width: 90%;
+    height: 1px;
+
+    position: absolute;
+    margin-inline: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-image: linear-gradient(
+      90deg,
+      hsla(0, 0%, 56%, 0.027) 0%,
+      hsl(344deg 0% 88%) 28%,
+      hsl(300deg 100% 100%) 52%,
+      hsl(344deg 0% 88%) 76%,
+      hsla(0, 0%, 56%, 0.027) 100%
+    );
+
+    opacity: 0.8;
+  }
+
+  @keyframes infinite-slider2 {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(
+        calc(
+          (var(--width) * var(--quantity) + (var(--quantity) * var(--i-gap))) *
+            -1
+        )
+      );
+    }
+  }
+
+  @media screen and (width >= 700px) {
+    .aboutMe__overlay {
+      background-image: url(../assets/gradients/home-gradient-aboutMe-md.svg);
+    }
+
+    .aboutMe-content-ctn {
+      align-items: center;
+      padding-top: 80px;
+      padding-bottom: 140px;
+    }
+
+    .aboutMe-content__title {
+      font-size: 40px;
+      padding-bottom: 100px;
+    }
+
+    .aboutMe-content__details {
+      align-items: center;
+      padding-bottom: 70px;
+      gap: 60px;
+    }
+    .content__details-img {
+      width: 70%;
+      max-width: 440px;
+    }
+
+    .content__details-paragraph-ctn {
+      max-width: 710px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .content__details-paragraph,
+    .aboutMe-content__closing-message {
+      font-size: 24px;
+    }
+
+    .aboutMe-content-slider {
+      --width: 60px;
+      --height: 60px;
+      --i-gap: 50px;
+    }
+
+    .aboutMe-content__closing-message-ctn {
+      max-width: 568px;
+      padding: 24px;
+      margin-top: 160px;
+
+      display: flex;
+      justify-content: center;
+    }
+  }
+  @media screen and (width >= 1200px) {
+    .aboutMe__overlay {
+      background-image: url(../assets/gradients/home-gradient-aboutMe-lg.svg);
+    }
+
+    .aboutMe-content-ctn {
+      width: 90%;
+      padding-top: 120px;
+    }
+
+    .aboutMe-content__title {
+      font-size: 50px;
+    }
+
+    .aboutMe-content__details {
+      flex-direction: row;
+      justify-content: center;
+      align-items: start;
+      padding-bottom: 120px;
+    }
+
+    .content__details-paragraph-ctn {
+      max-width: 625px;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .content__details-paragraph,
+    .aboutMe-content__closing-message {
+      font-size: 28px;
+    }
+    .content__details-paragraph {
+      text-align: left;
+    }
+
+    .aboutMe-content-sliders-ctn {
+      width: 80%;
+    }
+
+    .aboutMe-content-slider {
+      --width: 80px;
+      --height: 80px;
+      --i-gap: 60px;
+    }
+
+    .aboutMe-content__closing-message-ctn {
+      max-width: 700px;
+      padding: 28px;
+      margin-top: 160px;
+    }
+  }
+  @media screen and (width >= 1600px) {
+    .aboutMe-content__details {
+      gap: 100px;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.from(".aboutMe__overlay", {
+    opacity: 0,
+    duration: 2,
+    ease: "power2.inOut",
+    scrollTrigger: {
+      trigger: ".aboutMe__overlay",
+      toggleActions: "play reverse play reverse",
+      start: "10% 30% ",
+      end: "100% 40%",
+    },
+  });
+
+  const timelineTxt = gsap
+    .timeline()
+    .from(".aboutMe-content__title", {
+      opacity: 0,
+      x: -50,
+      ease: "sine",
+      duration: 0.7,
+    })
+    .from(".content__details-img", {
+      opacity: 0,
+      scale: 0.95,
+      duration: 0.5,
+      ease: "sine",
+    })
+    .from(".content__details-paragraph-ctn", {
+      opacity: 0,
+      y: 30,
+      ease: "back",
+      duration: 0.8,
+    });
+
+  ScrollTrigger.create({
+    trigger: ".aboutMe-main-ctn",
+    animation: timelineTxt,
+
+    toggleActions: "play reverse play reverse",
+    start: "top 40% ",
+    end: "100% 40%",
+  });
+</script>

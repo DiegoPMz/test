@@ -1,0 +1,291 @@
+---
+import IconCSS from "@assets/icons/IconCss.astro";
+import IconDNDKIT from "@assets/icons/IconDNDKITColor.astro";
+import IconHTML from "@assets/icons/IconHtml5.astro";
+import IconJavascript from "@assets/icons/IconJavascript.astro";
+import IconReact from "@assets/icons/IconReact.astro";
+import IconVite from "@assets/icons/IconVitejs.astro";
+
+import kanbanAppLap from "@assets/kanbanApp/kanbanapp-header.webp";
+import videoSrc from "@assets/kanbanApp/kanbanApp.webm";
+import kanbanMD from "@assets/kanbanApp/otherMockup.webp";
+import kanbanMF from "@assets/kanbanApp/testMockup.webp";
+import FooterSection from "@components/FooterSection.astro";
+import Navbar from "@components/Navbar.astro";
+import { Image } from "astro:assets";
+import MainLayout from "src/layouts/MainLayout.astro";
+import videoD1 from "../../assets/kanbanApp/KVD.webm";
+import videoD3 from "../../assets/kanbanApp/KVD2.webm";
+import videoD2 from "../../assets/kanbanApp/videoKPD.webm";
+
+import "src/styles/detailPageStyle.css";
+---
+
+<MainLayout
+  pageTitle="KanbanApp -- Diego Pm"
+  description="KanbanApp es un proyecto que facilita la organización de actividades en distintas tablas, ofreciendo una visualización clara y ordenada.Cada tabla se adapta a las necesidades específicas de la actividad que estamos gestionando. Dentro de cada una, podemos crear y mover elementos según su contexto y requisitos particulares. Asimismo, estos elementos pueden subdividirse para una gestión más detallada."
+>
+  <Navbar projectUrl="https://kanban-app-nine-xi.vercel.app/" />
+  <div style=`--pageColor : #5143e9 `>
+    <section id="header-bg" class="p-project__container">
+      <h1 data-title="KanbanApp" id="title_style" class="p-project__title">
+        KanbanApp
+      </h1>
+
+      <header class="p-project__header">
+        <Image
+          class="p-project__header-img"
+          src={kanbanAppLap}
+          alt="Imagen del proyecto kanban-app desde una laptop"
+          loading="eager"
+        />
+      </header>
+    </section>
+    <div class="p-project__content">
+      <section class="p-project__section">
+        <div class="p-project__section-item">
+          <h2
+            data-title="Tecnologías"
+            id="title_style"
+            class="p-project__subtitle"
+          >
+            Tecnologías
+          </h2>
+          <ul class="p-project__tech-list">
+            <li class="p-project__tech-item">
+              <IconHTML />
+            </li>
+            <li class="p-project__tech-item">
+              <IconCSS />
+            </li>
+            <li class="p-project__tech-item">
+              <IconJavascript />
+            </li>
+            <li class="p-project__tech-item">
+              <IconReact />
+            </li>
+            <li class="p-project__tech-item">
+              <IconVite />
+            </li>
+            <li class="p-project__tech-item p-project__tech-item--large">
+              <IconDNDKIT />
+            </li>
+          </ul>
+        </div>
+        <div class="p-project__section-item p-project__section-item--row">
+          <h2
+            data-title="Descripción"
+            id="title_style"
+            class="p-project__subtitle"
+          >
+            Descripción
+          </h2>
+
+          <div class="p-project__text-wrapper">
+            <p class="p-project__text">
+              KanbanApp es un proyecto que facilita la organización de
+              actividades en distintas tablas, ofreciendo una visualización
+              clara y ordenada. Cada tabla se adapta a las necesidades
+              específicas de la actividad que estamos gestionando. Dentro de
+              cada una, podemos crear y mover elementos según su contexto y
+              requisitos particulares. Asimismo, estos elementos pueden
+              subdividirse para una gestión más detallada.
+            </p>
+          </div>
+        </div>
+        <div class="p-project__section-item p-project__section-item--row">
+          <h2
+            data-title="Rol y responsabilidades"
+            id="title_style"
+            class="p-project__subtitle"
+          >
+            Rol y responsabilidades
+          </h2>
+
+          <div class="p-project__text-wrapper">
+            <p class="p-project__text">
+              En mi búsqueda de proyectos atractivos y divertidos de realizar,
+              me encontré con el proyecto KanbanApp. Utilicé el diseño
+              proporcionado por “Frontend Mentor”, donde encontré los estilos
+              base. Con este diseño como punto de partida, procedí a trabajar en
+              el proyecto. Elegí las tecnologías adecuadas, organicé el espacio
+              de desarrollo, realicé la maquetación y programé la aplicación en
+              su totalidad.
+            </p>
+          </div>
+        </div>
+
+        <div class="p-project__images p-project__section--bgGradient">
+          <div class="p-project__image-wrapper">
+            <Image
+              class="p-project__image"
+              src={kanbanMF}
+              alt="Imagen de la aplicación en dispositivos móviles"
+            />
+          </div>
+          <div class="p-project__image-wrapper">
+            <Image
+              class="p-project__image"
+              src={kanbanMD}
+              alt="Imagen de la aplicación en navegador web"
+            />
+          </div>
+        </div>
+
+        <div class="p-project__section-item p-project__section-item--row">
+          <h2
+            data-title="Proceso de desarrollo"
+            id="title_style"
+            class="p-project__subtitle"
+          >
+            Proceso de desarrollo
+          </h2>
+
+          <div class="p-project__text-wrapper">
+            <p class="p-project__text">
+              Al comenzar el proyecto, mi primer objetivo fue desglosar la
+              lógica detrás del mismo. Para esta tarea, utilicé una herramienta
+              llamada "Excalidraw", que me permitió visualizar los conceptos y
+              las diferentes partes que conforman el proyecto de manera clara y
+              organizada.
+            </p>
+
+            <p class="p-project__text">
+              Una vez establecido el enfoque para la lógica principal, procedí a
+              definir las tecnologías que utilizaría para llevar a cabo el
+              proyecto. Siempre mantuve como prioridad la reducción de
+              dependencias al mínimo necesario, con el fin de garantizar la
+              escalabilidad y la simplicidad en el desarrollo.
+            </p>
+          </div>
+        </div>
+
+        <div class="p-project__section">
+          <div class="p-project__section-item p-project__section-item--row">
+            <h2
+              data-title="Desafíos y soluciones"
+              id="title_style"
+              class="p-project__subtitle"
+            >
+              Desafíos y soluciones
+            </h2>
+
+            <div class="p-project__text-wrapper">
+              <p class="p-project__text">
+                Uno de los desafíos principales al realizar este proyecto fue
+                crear un estado global, ya que había demasiada dependencia de
+                datos entre un gran número de componentes. Opté por utilizar
+                solo hooks nativos de React para esto, mediante el uso de un
+                único useReducer. Este suministraría a múltiples contextos las
+                funciones para modificar el estado correspondiente.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-project__video-wrapper p-project__section--bgGradient">
+            <div class="p-project__video-container">
+              <video
+                width="327"
+                height="168"
+                class="p-project__video"
+                autoplay
+                loop
+                muted
+                playsinline
+              >
+                <source src={videoSrc} type="video/mp4" />
+              </video>
+            </div>
+          </div>
+
+          <div class="p-project__section-item p-project__section-item--texts">
+            <p class="p-project__text p-project__text--resize">
+              Otro problema que enfrenté fue la necesidad de reescribir una
+              lógica extensa para guardar los datos actualizados en el
+              localStorage. Lo resolví creando un helper que validaría si
+              existen datos almacenados en el localStorage con una clave/valor
+              específica. En caso de no existir, el helper colocaría los valores
+              pasados en el localStorage.
+            </p>
+            <p class="p-project__text p-project__text--resize">
+              Además, tuve que validar los datos ingresados en los respectivos
+              componentes que modificaban el estado. La falta de esta validación
+              permitía enviar datos inválidos o nulos. Por ello, desarrollé
+              helpers que validaban los datos según el apartado que se estuviera
+              modificando (creación de la tabla, actualización de la tabla,
+              creación/actualización de tareas). Estos helpers también se
+              encargaban de resaltar en rojo el input que contenía el error y de
+              mostrar un mensaje explicativo sobre el error cometido.
+            </p>
+          </div>
+
+          <div class="p-project__video-wrapper p-project__section--bgGradient">
+            <div class="p-project__video-examples">
+              <video
+                class="video-examples__item"
+                autoplay
+                loop
+                muted
+                playsinline
+              >
+                <source src={videoD1} type="video/mp4" />
+              </video>
+              <video
+                class="video-examples__item"
+                autoplay
+                loop
+                muted
+                playsinline
+              >
+                <source src={videoD2} type="video/mp4" />
+              </video>
+              <video
+                class="video-examples__item"
+                autoplay
+                loop
+                muted
+                playsinline
+              >
+                <source src={videoD3} type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-project__section-item p-project__section-item--row">
+          <h2
+            data-title="Lecciones aprendidas"
+            id="title_style"
+            class="p-project__subtitle"
+          >
+            Lecciones aprendidas
+          </h2>
+          <div class="p-project__text-wrapper">
+            <p class="p-project__text">
+              Este proyecto me brindó valiosas enseñanzas y una comprensión más
+              clara de por qué, en ocasiones, el uso de un framework puede
+              agilizar significativamente el proceso de desarrollo, llegando a
+              ser esencial. Además, aprendí la importancia de evaluar y
+              considerar la utilidad de un gestor de estado, ya que en ciertas
+              situaciones su implementación puede simplificar la escritura,
+              lectura y, por ende, la depuración del código.
+            </p>
+            <p class="p-project__text">
+              Otra lección que destaco tras completar este proyecto es la
+              necesidad de conocer e implementar patrones de diseño. Estos no
+              solo mejoran la legibilidad del código, sino que también
+              establecen un marco de trabajo que, al ser seguido, simplifica
+              notablemente la depuración. Además, permiten crear componentes más
+              reutilizables y promueven prácticas que aseguran la calidad y
+              claridad del código.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="p-project__footer">
+      <FooterSection />
+    </div>
+  </div>
+</MainLayout>

@@ -1,0 +1,405 @@
+<section class="project-main-ctn">
+  <div class="project-main__overlay"></div>
+  <div class="project-main__introduction">
+    <div class="project-title">
+      <h2 class="project-title__txt">Mis proyectos</h2>
+    </div>
+    <div class="project-paragraph">
+      <p class="project-paragraph-txt">
+        Estos son algunos de mis proyectos, cada uno representa un paso en mi
+        camino de aprendizaje
+      </p>
+    </div>
+  </div>
+
+  <div class="project-main__projects">
+    <a
+      href="/detalles/DevLinks"
+      class="main__projects-card"
+      data-astro-prefetch
+    >
+      <div class="projects-card__description">
+        <h3 class="card__description-title">DevLinks</h3>
+        <p class="card__description-txt">
+          Crea, gestiona y comparte tus enlaces en un perfil único y
+          personalizado.
+        </p>
+      </div>
+
+      <div class="projects-card__image-bgDecoration">
+        <div
+          class="projects-card__image-img projects-card__image-img--devLinks"
+        >
+        </div>
+      </div>
+    </a>
+
+    <a
+      href="/detalles/KanbanApp"
+      class="main__projects-card"
+      data-astro-prefetch
+    >
+      <div class="projects-card__description">
+        <h3 class="card__description-title">KanbanApp</h3>
+        <p class="card__description-txt">
+          Organiza tus Tareas: Gestiona Actividades con Claridad y Flexibilidad.
+        </p>
+      </div>
+
+      <div class="projects-card__image-bgDecoration">
+        <div
+          class="projects-card__image-img projects-card__image-img--kanbanApp"
+        >
+        </div>
+      </div>
+    </a>
+    <a
+      href="/detalles/Where-In-The-World"
+      class="main__projects-card"
+      data-astro-prefetch
+    >
+      <div class="projects-card__description">
+        <h3 class="card__description-title">Where in the world?</h3>
+        <p class="card__description-txt">
+          Descubre Nuestro Planeta: Detalles y Curiosidades de Cada Rincón del
+          Mundo.
+        </p>
+      </div>
+
+      <div class="projects-card__image-bgDecoration">
+        <div class="projects-card__image-img projects-card__image-img--witw">
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<style>
+  .project-main-ctn {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 60px 24px 100px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    background-color: var(--bg-color-main);
+
+    position: relative;
+    z-index: 30;
+  }
+
+  .project-main__overlay {
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../assets/gradients/home-gradient-projects-sm.svg");
+    background-position: top;
+    background-size: cover;
+    opacity: 0.6;
+  }
+
+  .project-main__introduction {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .project-title__txt {
+    color: var(--txt-color-t);
+    font-size: 30px;
+    font-weight: 500;
+    text-wrap: pretty;
+    text-align: left;
+  }
+
+  .project-main__projects {
+    display: flex;
+    flex-direction: column;
+
+    gap: 68px;
+  }
+
+  .project-paragraph-txt {
+    color: var(--txt-color-p);
+    font-size: 18px;
+    text-align: left;
+    font-weight: 400;
+    text-wrap: pretty;
+  }
+
+  .main__projects-card {
+    width: 100%;
+
+    padding: 18px 0px 0px 18px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    z-index: 100;
+    position: relative;
+  }
+  .main__projects-card::after {
+    content: "";
+    width: 100%;
+    height: 90%;
+
+    position: absolute;
+    z-index: -1;
+
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+
+    background: linear-gradient(
+      150deg,
+      rgba(122, 122, 122, 0.452),
+      transparent,
+      transparent
+    );
+
+    background-color: rgba(0, 0, 0, 0.301);
+  }
+
+  .projects-card__description {
+    display: flex;
+    flex-direction: column;
+
+    & .card__description-title {
+      font-weight: 500;
+      font-size: 20px;
+      color: var(--txt-color-t);
+    }
+    & .card__description-txt {
+      font-weight: 400;
+      font-size: 15px;
+      color: var(--txt-color-p);
+    }
+  }
+
+  .projects-card__image-bgDecoration {
+    width: 100%;
+    aspect-ratio: 3/2;
+
+    border-radius: 24px;
+    animation: changeCardDecorationColor 20s linear infinite alternate-reverse;
+
+    padding: 18px 0px 0px 18px;
+    overflow: hidden;
+
+    .projects-card__image-img {
+      width: 110%;
+      height: 110%;
+
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: left;
+    }
+
+    .projects-card__image-img--devLinks {
+      background-image: url(../assets/images/mockup-devlinks.png);
+    }
+
+    .projects-card__image-img--kanbanApp {
+      background-image: url(../assets/images/mockup-kanbanApp.png);
+    }
+
+    .projects-card__image-img--witw {
+      background-image: url(../assets/images/mockup-witw.png);
+    }
+  }
+
+  @keyframes changeCardDecorationColor {
+    0% {
+      background-color: var(--color-lavender);
+    }
+    25% {
+      background-color: var(--color-violet);
+    }
+    50% {
+      background-color: var(--color-sky);
+    }
+    100% {
+      background-color: var(--color-aqua);
+    }
+  }
+
+  /* MEDIA QUERIES*/
+  @media screen and (width >= 700px) {
+    .project-main-ctn {
+      padding-top: 80px;
+      padding-bottom: 140px;
+      gap: 80px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .project-main__overlay {
+      background-image: url("../assets/gradients/home-gradient-projects-md.svg");
+    }
+
+    .project-main__introduction {
+      gap: 16px;
+      width: 80%;
+      align-items: center;
+    }
+    .project-title__txt {
+      font-size: 40px;
+      text-align: center;
+    }
+    .project-paragraph {
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+    }
+    .project-paragraph-txt {
+      width: 100%;
+      max-width: 520px;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .project-main__projects {
+      gap: 100px;
+      width: 80%;
+
+      justify-content: center;
+      align-items: center;
+    }
+
+    .main__projects-card {
+      max-width: 622px;
+      padding: 32px 0px 0px 32px;
+      gap: 20px;
+    }
+
+    .projects-card__description {
+      padding-right: 32px;
+
+      & .card__description-title {
+        font-size: 28px;
+      }
+      & .card__description-txt {
+        font-size: 18px;
+      }
+    }
+
+    .projects-card__image-bgDecoration {
+      padding: 32px 0px 0px 32px;
+    }
+  }
+
+  @media screen and (width >= 1200px) {
+    .project-main-ctn {
+      padding: 0;
+      gap: 100px;
+    }
+
+    .project-main__overlay {
+      background-image: url("../assets/gradients/home-gradient-projects-lg.svg");
+    }
+
+    .project-main__introduction {
+      width: 80%;
+    }
+    .project-title__txt {
+      font-size: 50px;
+    }
+    .project-paragraph {
+      width: 100%;
+    }
+    .project-paragraph-txt {
+      max-width: 780px;
+      font-size: 30px;
+    }
+
+    .project-main__projects {
+      gap: 24px;
+      width: 90%;
+      flex-direction: row;
+    }
+    .main__projects-card {
+      max-width: none;
+    }
+  }
+
+  @media screen and (width >= 1600px) {
+    .project-main-ctn {
+      padding-bottom: 40px;
+      gap: 100px;
+    }
+
+    .project-main__projects {
+      width: 90%;
+      max-width: 1424px;
+      gap: 48px;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  const cards = document.querySelectorAll(".main__projects-card");
+
+  const animation = gsap.from(".project-main__overlay", {
+    opacity: 0,
+    duration: 2,
+    ease: "power2.inOut",
+  });
+
+  ScrollTrigger.create({
+    trigger: ".project-main__overlay",
+    animation: animation,
+
+    toggleActions: "play reverse play reverse",
+    start: "10% 30% ",
+    end: "100% 40%",
+  });
+
+  const timelineTxt = gsap
+    .timeline()
+    .from(".project-title__txt", {
+      opacity: 0,
+      x: -50,
+      ease: "sine",
+      duration: 0.7,
+    })
+    .from(".project-paragraph-txt", {
+      opacity: 0,
+      y: 30,
+      ease: "sine",
+      duration: 0.7,
+    });
+
+  ScrollTrigger.create({
+    trigger: ".project-main-ctn",
+    animation: timelineTxt,
+
+    toggleActions: "play reverse play reverse",
+    start: "top 30% ",
+    end: "100% 40%",
+  });
+
+  cards.forEach((el) => {
+    const animationCards = gsap.from(el, {
+      opacity: 0,
+      y: 30,
+      ease: "power3",
+      duration: 1.5,
+    });
+
+    ScrollTrigger.create({
+      trigger: el,
+      animation: animationCards,
+      toggleActions: "play reverse play reverse",
+      start: "top 70%",
+      end: "100% top",
+    });
+  });
+</script>

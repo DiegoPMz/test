@@ -1,0 +1,129 @@
+---
+import IconArrow from "@assets/IconArrow.astro";
+import AppButton from "./AppButton.astro";
+const { projectUrl } = Astro.props;
+---
+
+<nav class="p-projects-navbar">
+  <div class="navbar__link-ctn">
+    <AppButton type="a" link={{ href: "/", target: "_self" }}>
+      <div class="link-ctn__wrapper">
+        <div class="navbar__goBack-icon">
+          <IconArrow />
+        </div>
+        <span class="navbar__goBack-txt"> Regresar </span>
+      </div>
+    </AppButton>
+  </div>
+
+  <div class="navbar__link-ctn">
+    <AppButton type="a" link={{ href: projectUrl, target: "_blank" }}>
+      <span class="navbar__project-txt"> Visitar </span>
+    </AppButton>
+  </div>
+</nav>
+
+<style>
+  .navbar__link-ctn {
+    z-index: 100;
+  }
+  .link-ctn__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .p-projects-navbar {
+    position: fixed;
+    top: 0;
+    display: flex;
+    z-index: 600;
+    justify-content: flex-end;
+    gap: 24px;
+    align-items: center;
+    width: 100%;
+    padding: 24px;
+  }
+
+  .p-projects-navbar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(255, 255, 255, 0.027);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    transition: opacity 0.5s ease-out;
+    opacity: var(--display-value, 1);
+  }
+  .nav-visible {
+    --display-value: 1;
+  }
+  .nav-hidden {
+    --display-value: 0;
+  }
+
+  .navbar__goBack-icon {
+    animation: pulse 2s infinite;
+
+    svg {
+      aspect-ratio: 1/1;
+      width: 12px;
+      fill: var(--txt-color-t);
+    }
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .p-projects-navbar {
+      padding-top: 28px;
+      padding-bottom: 28px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .p-projects-navbar {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    .p-projects-navbar {
+      padding-left: 140px;
+      padding-right: 140px;
+    }
+  }
+</style>
+
+<script>
+  const navElement = document.querySelector(".p-projects-navbar");
+  const toggleNavbarVisibility = () => {
+    if (!navElement) return;
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition > 0) {
+      navElement.classList.add("nav-visible");
+      navElement.classList.remove("nav-hidden");
+    } else {
+      navElement.classList.add("nav-hidden");
+      navElement.classList.remove("nav-visible");
+    }
+  };
+
+  if (navElement) {
+    document.addEventListener("scroll", toggleNavbarVisibility);
+  } else {
+    document.removeEventListener("scroll", toggleNavbarVisibility);
+  }
+</script>

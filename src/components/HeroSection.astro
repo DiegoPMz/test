@@ -1,0 +1,280 @@
+---
+import IconGithub from "@assets/icons/IconGithub.astro";
+import AppButton from "./AppButton.astro";
+import AppCopyEmailClipboard from "./AppCopyEmailClipboard.astro";
+---
+
+<section class="ctn-home__introduction">
+  <div class="introduction__main">
+    <div class="introduction_general-title">
+      <div class="intro-title__container">
+        <h1 class="intro-title__text">Hola soy Diego</h1>
+        <div class="intro-title__image"></div>
+      </div>
+      <div class="intro-latter-title__container">
+        <h1 class="intro-title__text intro-title__text--center">
+          Desarrollador
+          <span class="intro-title__text--highlight"> frontend </span>
+          Conocimientos en
+          <span class="intro-title__text--highlight"> backend </span>
+        </h1>
+      </div>
+    </div>
+    <div class="ctn-links-draft">
+      <AppButton
+        type="a"
+        link={{ href: "https://github.com/DiegoPMz", target: "_blank" }}
+      >
+        <div class="introduction__link-ctn">
+          <div class="introduction__link">
+            <IconGithub />
+          </div>
+          Github
+        </div>
+      </AppButton>
+      <AppCopyEmailClipboard />
+    </div>
+
+    <article class="introduction__paragraph-subCtn">
+      <p class="introduction__paragraph">
+        Desarrollador apasionado por la programación, siempre en constante
+        aprendizaje y explorando nuevas tecnologías
+      </p>
+    </article>
+  </div>
+</section>
+
+<style>
+  .introduction__link-ctn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .introduction__link {
+    display: flex;
+    align-items: center;
+    width: 14px;
+    height: 14px;
+  }
+
+  .ctn-home__introduction {
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    background-color: var(--bg-color-main);
+  }
+  .ctn-home__introduction::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-image: url(../assets/gradients/home-gradient-ph.svg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  .introduction__main {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .introduction_general-title {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ctn-links-draft {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 10px 0 50px 0;
+
+    & .circle-draft {
+      width: 40px;
+      aspect-ratio: 1/1;
+      border: 1px solid white;
+      border-radius: 50%;
+    }
+  }
+
+  .intro-title__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .intro-title__text {
+    color: var(--txt-color-t);
+    font-size: 37px;
+    font-weight: 700;
+  }
+
+  .intro-latter-title__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .intro-title__text--center {
+    text-align: center;
+  }
+  .intro-title__text--highlight {
+    color: var(--color-violet);
+    animation: changeTextColor 20s infinite alternate;
+    animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  .intro-title__image {
+    width: 130px;
+    aspect-ratio: 21/9;
+
+    background-image: url(../assets/images/personal-img.webp);
+    background-position: center;
+    background-size: cover;
+    border-radius: clamp(24px, 20vw, 90px);
+  }
+
+  .introduction__paragraph-subCtn {
+    display: flex;
+    justify-content: center;
+  }
+  .introduction__paragraph {
+    font-size: 20px;
+    font-weight: 500;
+
+    text-align: center;
+    color: var(--txt-color-p);
+  }
+
+  @media screen and (width >= 700px) {
+    .ctn-home__introduction::before {
+      background-image: url(../assets/gradients/home-gradient-tb.svg);
+      opacity: 0.65;
+    }
+
+    .intro-title__text {
+      font-size: 50px;
+    }
+    .intro-title__text--center {
+      text-align: center;
+      width: 560px;
+    }
+
+    .intro-title__image {
+      width: 180px;
+      border-radius: clamp(24px, 20vw, 90px);
+    }
+
+    .introduction__paragraph {
+      font-size: 24px;
+      width: 572px;
+    }
+  }
+
+  @media screen and (width >= 1200px) {
+    .ctn-home__introduction::before {
+      background-image: url(../assets/gradients/home-gradient-dk.svg);
+    }
+
+    .introduction__main {
+      width: 80%;
+    }
+
+    .ctn-links-draft {
+      gap: 10px;
+      padding-bottom: 80px;
+
+      & .circle-draft {
+        width: 50px;
+      }
+    }
+
+    .intro-title__container {
+      flex-direction: row;
+      justify-content: center;
+      gap: 20px;
+    }
+    .intro-title__text {
+      font-size: 70px;
+    }
+
+    .intro-title__text--center {
+      width: 864px;
+    }
+
+    .intro-title__image {
+      width: 150px;
+    }
+
+    .introduction__paragraph-subCtn {
+      display: flex;
+      justify-content: center;
+    }
+    .introduction__paragraph {
+      font-size: 30px;
+      width: 708px;
+    }
+  }
+
+  @keyframes changeTextColor {
+    0% {
+      color: var(--color-lavender);
+    }
+    25% {
+      color: var(--color-violet);
+    }
+    50% {
+      color: var(--color-sky);
+    }
+    100% {
+      color: var(--color-aqua);
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  const titleEl = document.querySelectorAll(".intro-title__text");
+  const paragraphEl = document.querySelectorAll(".introduction__paragraph");
+  const img = document.querySelectorAll(".intro-title__image");
+
+  const timeline = gsap
+    .timeline()
+    .from(titleEl, {
+      y: -30,
+      opacity: 0,
+      ease: "sine",
+      duration: 0.8,
+    })
+    .from(img, {
+      opacity: 0,
+      ease: "sine",
+      duration: 0.3,
+    })
+    .from(paragraphEl, {
+      y: 40,
+      opacity: 0,
+      ease: "back",
+      duration: 0.9,
+    });
+
+  ScrollTrigger.create({
+    trigger: ".ctn-home__introduction",
+    animation: timeline,
+    toggleActions: "play reverse play reset",
+    start: "top 1% ",
+    end: "100% 40%",
+  });
+</script>

@@ -1,0 +1,229 @@
+---
+import ArrowLinkIcon from "@assets/ArrowLinkIcon.astro";
+---
+
+<footer class="footer__ctn">
+  <div class="footer__txt-ctn">
+    <span class="footer__txt"
+      >Gracias por tu visita! <span style="font-size: 25px ;"> ✨</span></span
+    >
+  </div>
+  <ul class="footer__list-ctn">
+    <li class="footer__list">
+      <a
+        class="footer__list-item-link"
+        aria-label="Perfil de Linkedin"
+        target="_blank"
+        href="https://www.linkedin.com/in/diego-peralta-b9b012291/"
+      >
+        Linkedin
+        <div class="footer__list-item-icon">
+          <ArrowLinkIcon />
+        </div>
+      </a>
+    </li>
+    <li class="footer__list">
+      <a
+        class="footer__list-item-link"
+        target="_blank"
+        aria-label="Perfil de Github"
+        href="https://github.com/DiegoPMz"
+      >
+        GitHub
+        <div class="footer__list-item-icon">
+          <ArrowLinkIcon />
+        </div>
+      </a>
+    </li>
+    <li class="footer__list">
+      <button
+        id="footer__list-btn-email"
+        type="button"
+        class="footer__list-item-link"
+      >
+        Email
+        <div class="footer__list-item-icon">
+          <ArrowLinkIcon />
+        </div>
+      </button>
+    </li>
+  </ul>
+</footer>
+
+<style>
+  .footer__ctn {
+    width: 100%;
+
+    padding: 50px 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    position: relative;
+    z-index: 50;
+
+    background-color: var(--bg-color-main);
+  }
+  .footer__ctn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background-image: url(../assets/gradients/home-gradient-footer-sm.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+  }
+
+  .footer__ctn::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-inline: auto;
+
+    background-image: linear-gradient(
+      90deg,
+      hsla(0, 0%, 56%, 0.171) 0%,
+      hsla(0, 0%, 88%, 0.774) 28%,
+      hsl(300deg 100% 100%) 52%,
+      hsla(0, 0%, 88%, 0.774) 76%,
+      hsla(0, 0%, 56%, 0.171) 100%
+    );
+
+    opacity: 0.8;
+  }
+
+  .footer__txt-ctn {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .footer__txt {
+    max-width: 295px;
+    font-size: 46px;
+    color: var(--txt-color-t);
+    font-weight: 700;
+    text-wrap: pretty;
+  }
+
+  .footer__list-ctn {
+    list-style: none;
+
+    display: flex;
+
+    gap: 32px;
+  }
+  .footer__list {
+    width: fit-content;
+  }
+  .footer__list:hover {
+    color: var(--txt-color-t);
+  }
+
+  .footer__list-item-link {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--txt-color-p);
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .footer__list-item-icon {
+    transform: rotate(-45deg);
+
+    svg {
+      aspect-ratio: 1/1;
+      width: 12px;
+      fill: var(--txt-color-t);
+    }
+  }
+
+  @media screen and (width >= 700px) {
+    .footer__ctn::before {
+      opacity: 1;
+    }
+    .footer__ctn::after {
+      height: 2px;
+      background-image: linear-gradient(
+        90deg,
+        hsla(0, 0%, 56%, 0.171) 0%,
+        hsla(0, 0%, 88%, 0.555) 28%,
+        hsl(300deg 100% 100%) 52%,
+        hsla(0, 0%, 88%, 0.555) 76%,
+        hsla(0, 0%, 56%, 0.171) 100%
+      );
+    }
+
+    .footer__txt {
+      max-width: 350px;
+      font-size: 50px;
+    }
+
+    .footer__ctn {
+      padding: 80px 60px;
+      gap: 80px;
+    }
+
+    .footer__list-ctn {
+      gap: 60px;
+    }
+
+    .footer__list-item-link {
+      font-size: 18px;
+    }
+
+    .footer__list-item-icon {
+      svg {
+        width: 14px;
+      }
+    }
+  }
+
+  @media screen and (width >= 1200px) {
+    .footer__ctn::before {
+      background-image: url(../assets/gradients/home-gradient-footer-lg.svg);
+    }
+
+    .footer__txt {
+      max-width: 600px;
+      font-size: 60px;
+    }
+
+    .footer__ctn {
+      padding: 100px 80px;
+    }
+  }
+
+  @media screen and (width >= 1600px) {
+    .footer__ctn::before {
+      background-image: url(../assets/gradients/home-gradient-footer-lg.svg);
+    }
+
+    .footer__txt {
+      max-width: 600px;
+      font-size: 80px;
+    }
+  }
+</style>
+
+<script>
+  import { copyToClipboard } from "src/utils/copyToClipboard";
+
+  const btn = document.querySelector("#footer__list-btn-email");
+  const PERSONAL_EMAIL = "diego.pmz08@gmail.com";
+  if (btn) {
+    btn.addEventListener("click", () => copyToClipboard(PERSONAL_EMAIL));
+  }
+</script>

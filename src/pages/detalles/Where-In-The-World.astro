@@ -1,0 +1,323 @@
+---
+import projectHeader from "@assets/WITW/WITW-header.webp";
+import witwmd from "@assets/WITW/WITWMD.webp";
+import witwmf from "@assets/WITW/WITWMF.webp";
+import videoSrc from "@assets/WITW/WITWV.webm";
+import videoD1 from "@assets/WITW/video1r.webm";
+import videoD2 from "@assets/WITW/video2r.webm";
+import videoD3 from "@assets/WITW/video3r.webm";
+import IconCSS from "@assets/icons/IconCss.astro";
+import IconHTML from "@assets/icons/IconHtml5.astro";
+import IconJavascript from "@assets/icons/IconJavascript.astro";
+import IconReact from "@assets/icons/IconReact.astro";
+import IconReactRouterColor from "@assets/icons/IconReactrouter.astro";
+import IconVite from "@assets/icons/IconVitejs.astro";
+import FooterSection from "@components/FooterSection.astro";
+import Navbar from "@components/Navbar.astro";
+import { Image } from "astro:assets";
+import MainLayout from "src/layouts/MainLayout.astro";
+import "src/styles/detailPageStyle.css";
+---
+
+<MainLayout
+  pageTitle="Where in the World -- Diego Pm"
+  description="Where in the world es un proyecto que ofrece información detallada sobre todos los países del mundo. Esto facilita a los usuarios encontrar dato relevantes sobre cualquier lugar de interés. Con esta aplicación, los usuarios pueden explorar países mediante una búsqueda individual o por región, lo que les permite obtener una visión más amplia y completa."
+>
+  <Navbar projectUrl="https://where-in-the-world-ashy.vercel.app/" />
+  <div style=`--pageColor : #04dda0`>
+    <section id="header-bg" class="p-project__container">
+      <h1
+        data-title="Where in the World"
+        id="title_style"
+        class="p-project__title"
+      >
+        Where in the World
+      </h1>
+
+      <header class="p-project__header">
+        <Image
+          class="p-project__header-img"
+          src={projectHeader}
+          alt="Imagen del proyecto Where in the World desde una laptop"
+          loading="eager"
+        />
+      </header>
+    </section>
+    <div class="p-project__content">
+      <section class="p-project__section">
+        <div class="p-project__section-item">
+          <h2
+            data-title="Tecnologías"
+            id="title_style"
+            class="p-project__subtitle"
+          >
+            Tecnologías
+          </h2>
+          <ul class="p-project__tech-list">
+            <li class="p-project__tech-item">
+              <IconHTML />
+            </li>
+            <li class="p-project__tech-item">
+              <IconCSS />
+            </li>
+            <li class="p-project__tech-item">
+              <IconJavascript />
+            </li>
+            <li class="p-project__tech-item">
+              <IconReact />
+            </li>
+            <li class="p-project__tech-item">
+              <IconVite />
+            </li>
+            <li class="p-project__tech-item">
+              <IconReactRouterColor />
+            </li>
+          </ul>
+        </div>
+        <div class="p-project__section-item p-project__section-item--row">
+          <h2
+            data-title="Descripción"
+            id="title_style"
+            class="p-project__subtitle"
+          >
+            Descripción
+          </h2>
+
+          <div class="p-project__text-wrapper">
+            <p class="p-project__text">
+              "Where in the world" es un proyecto que ofrece información
+              detallada sobre todos los países del mundo. Esto facilita a los
+              usuarios encontrar datos relevantes sobre cualquier lugar de
+              interés. Con esta aplicación, los usuarios pueden explorar países
+              mediante una búsqueda individual o por región, lo que les permite
+              obtener una visión más amplia y completa.
+            </p>
+            <p class="p-project__text">
+              Entre la información proporcionada se encuentran detalles como el
+              nombre nativo del país, su población total, la región a la que
+              pertenece, su subregión específica, la capital y otras
+              características relevantes. Este proyecto tiene como objetivo
+              proporcionar una experiencia informativa y fácil de usar para
+              aquellos interesados en conocer más sobre los distintos países del
+              mundo.
+            </p>
+          </div>
+        </div>
+        <div class="p-project__section-item p-project__section-item--row">
+          <h2
+            data-title="Rol y responsabilidades"
+            id="title_style"
+            class="p-project__subtitle"
+          >
+            Rol y responsabilidades
+          </h2>
+
+          <div class="p-project__text-wrapper">
+            <p class="p-project__text">
+              En este proyecto me enfoqué principalmente en el desarrollo
+              frontend, donde seleccioné cuidadosamente las tecnologías
+              adecuadas, organicé el espacio de desarrollo y completé la
+              maquetación de la aplicación. Gracias al diseño base proporcionado
+              por Frontend Mentor a través de Figma, pude concentrarme por
+              completo en el entorno de desarrollo sin preocuparme demasiado por
+              crear una interfaz de usuario atractiva desde cero.
+            </p>
+          </div>
+        </div>
+
+        <div class="p-project__images p-project__section--bgGradient">
+          <div class="p-project__image-wrapper">
+            <Image
+              class="p-project__image"
+              src={witwmf}
+              alt="Imagen de la aplicación en dispositivos móviles"
+            />
+          </div>
+          <div class="p-project__image-wrapper">
+            <Image
+              class="p-project__image"
+              src={witwmd}
+              alt="Imagen de la aplicación en navegador web"
+            />
+          </div>
+        </div>
+
+        <div class="p-project__section-item p-project__section-item--row">
+          <h2
+            data-title="Proceso de desarrollo"
+            id="title_style"
+            class="p-project__subtitle"
+          >
+            Proceso de desarrollo
+          </h2>
+
+          <div class="p-project__text-wrapper">
+            <p class="p-project__text">
+              En este proyecto, inicialmente me enfoqué en identificar las rutas
+              principales de la aplicación. Una vez definidas estas rutas,
+              procedí a crear las páginas correspondientes para cada una de
+              ellas. Posteriormente, para determinar qué estados eran
+              necesarios, utilicé una herramienta llamada "Excalidraw" para
+              crear diagramas que definieran los estados principales dentro de
+              cada componente padre. Una vez completado este paso, pude
+              dedicarme a cada característica específica de las páginas, como el
+              buscador y el selector de país, entre otros.
+            </p>
+          </div>
+        </div>
+
+        <div class="p-project__section">
+          <div class="p-project__section-item p-project__section-item--row">
+            <h2
+              data-title="Desafíos y soluciones"
+              id="title_style"
+              class="p-project__subtitle"
+            >
+              Desafíos y soluciones
+            </h2>
+
+            <div class="p-project__text-wrapper">
+              <p class="p-project__text">
+                Uno de los desafíos que enfrenté fue sincronizar el estado de la
+                URL con la obtención de datos. Había creado un hook
+                personalizado para obtener datos, pero necesitaba que este hook
+                se ejecutara tanto al cambiar de página como al cargar
+                directamente el enlace. Para resolver este problema, desarrollé
+                otro hook que, basado en los datos de la URL, proporcionara el
+                endpoint correspondiente al hook de obtención de datos, para
+                luego pasarlo a un estado y hacer uso de los datos.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-project__video-wrapper p-project__section--bgGradient">
+            <div class="p-project__video-container">
+              <video
+                width="327"
+                height="168"
+                class="p-project__video"
+                autoplay
+                loop
+                muted
+                playsinline
+              >
+                <source src={videoSrc} type="video/mp4" />
+              </video>
+            </div>
+          </div>
+
+          <div class="p-project__section-item p-project__section-item--texts">
+            <p class="p-project__text p-project__text--resize">
+              Un problema al que no había anticipado enfrentarme era que la API
+              que utilicé para obtener los datos no tenía un límite en el número
+              de países que debía devolver en cada llamada, lo que complicaba la
+              paginación ya que siempre recuperaba todos los datos disponibles.
+              Para resolver este problema, creé un hook que recibía la
+              información correspondiente según la ubicación y el número de
+              elementos que se deseaba mostrar por página. Con estos datos, el
+              hook devolvía el número total de páginas y la información que
+              debía mostrarse en la página actual.
+            </p>
+            <p class="p-project__text p-project__text--resize">
+              Además, tuve que validar los datos ingresados en los respectivos
+              componentes que modificaban el estado. La falta de esta validación
+              permitía enviar datos inválidos o nulos. Por ello, desarrollé
+              helpers que validaban los datos según el apartado que se estuviera
+              modificando (creación de la tabla, actualización de la tabla,
+              creación/actualización de tareas). Estos helpers también se
+              encargaban de resaltar en rojo el input que contenía el error y de
+              mostrar un mensaje explicativo sobre el error cometido.
+            </p>
+
+            <p class="p-project__text p-project__text--resize">
+              De todos los segmentos de la aplicación, el componente de
+              paginación fue una funcionalidad que resultó más desafiante de lo
+              que anticipaba. No esperaba encontrarme con tantos problemas al
+              implementarlo. La complejidad radicaba en la necesidad de generar
+              dinámicamente un conjunto de botones para cambiar de página, en
+              función del número total de páginas. Además, debía decidir cuántos
+              botones mostrar y cómo ajustar los números en los componentes
+              según la página actual en la que se encontrara el usuario, por
+              ejemplo: 1, 2, 3, 4, 5 o 1, ..., 4, 5, 6, ..., 21.
+            </p>
+            <p class="p-project__text p-project__text--resize">
+              Después de varios intentos y errores, desarrollé un hook
+              específico para manejar esta funcionalidad. Este hook recibe como
+              parámetros el número total de páginas y la cantidad de botones que
+              deseamos mostrar. Luego, realiza una validación para determinar
+              las posiciones y los números que se mostrarán, teniendo en cuenta
+              la página actual y el número total de páginas.
+            </p>
+          </div>
+
+          <div class="p-project__video-wrapper p-project__section--bgGradient">
+            <div class="p-project__video-examples">
+              <video
+                class="video-examples__item"
+                autoplay
+                loop
+                muted
+                playsinline
+              >
+                <source src={videoD1} type="video/mp4" />
+              </video>
+              <video
+                class="video-examples__item"
+                autoplay
+                loop
+                muted
+                playsinline
+              >
+                <source src={videoD2} type="video/mp4" />
+              </video>
+              <video
+                class="video-examples__item"
+                autoplay
+                loop
+                muted
+                playsinline
+              >
+                <source src={videoD3} type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-project__section-item p-project__section-item--row">
+          <h2
+            data-title="Lecciones aprendidas"
+            id="title_style"
+            class="p-project__subtitle"
+          >
+            Lecciones aprendidas
+          </h2>
+          <div class="p-project__text-wrapper">
+            <p class="p-project__text">
+              Después de este proyecto, realmente amplié mi comprensión sobre la
+              importancia de abordar problemas inesperados con creatividad y
+              flexibilidad. Aprendí a no reinventar la rueda y a valorar la
+              eficiencia que proporciona el uso de componentes ya existentes.
+              Además, adquirí habilidades para buscar soluciones de manera más
+              efectiva y precisa, explorando recursos disponibles y aprovechando
+              la experiencia de la comunidad de desarrollo. En resumen, este
+              proyecto no solo me permitió fortalecer mis habilidades técnicas,
+              sino también mi enfoque en la resolución de problemas en el
+              desarrollo de software.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="p-project__footer">
+      <FooterSection />
+    </div>
+  </div>
+</MainLayout>
+
+<style>
+  .video-examples__item:nth-child(1),
+  .video-examples__item:nth-child(2) {
+    filter: brightness(1.4);
+  }
+</style>

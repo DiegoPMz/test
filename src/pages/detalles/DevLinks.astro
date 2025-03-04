@@ -1,0 +1,340 @@
+---
+import browserMock from "@assets/devlinks/devlinks-browser.webp";
+import headerImage from "@assets/devlinks/devlinks-header.webp";
+import staticMobilesMock from "@assets/devlinks/devlinks-static-phones.webp";
+import video1 from "@assets/devlinks/devlinksDVideo.webm";
+import videoPhone1 from "@assets/devlinks/videoPhone1.webm";
+import videoPhone2 from "@assets/devlinks/videoPhone2.webm";
+import videoPhone3 from "@assets/devlinks/videoPhone3.webm";
+
+import IconCss from "@assets/icons/IconCss.astro";
+import IconExpressjs from "@assets/icons/IconExpressjs.astro";
+import IconHtml5 from "@assets/icons/IconHtml5.astro";
+import IconJavascript from "@assets/icons/IconJavascript.astro";
+import IconMongodb from "@assets/icons/IconMongodb.astro";
+import IconNodejs from "@assets/icons/IconNodejs.astro";
+import IconReact from "@assets/icons/IconReact.astro";
+import IconTailwindcss from "@assets/icons/IconTailwindcss.astro";
+import IconTypescript from "@assets/icons/IconTypescript.astro";
+import IconVitejs from "@assets/icons/IconVitejs.astro";
+import IconZod from "@assets/icons/IconZod.astro";
+import FooterSection from "@components/FooterSection.astro";
+import Navbar from "@components/Navbar.astro";
+import { Image } from "astro:assets";
+import MainLayout from "src/layouts/MainLayout.astro";
+
+import "@styles/detailPageStyle.css";
+---
+
+<MainLayout
+  pageTitle="DevLinks -- Diego Pm"
+  description="DevLinks es una aplicación que permite a los desarrolladores crear páginas de enlaces personalizadas de manera rápida y sencilla. Estas páginas facilitan la presentación de perfiles, proyectos y otras plataformas en un solo lugar, optimizando la presencia en línea de los profesionales. La aplicación ofrece plantillas personalizables y una interfaz intuitiva, lo que permite a los usuarios diseñar páginas atractivas sin necesidad de conocimientos avanzados en desarrollo web."
+>
+  <Navbar projectUrl="https://kanban-app-nine-xi.vercel.app/" />
+  <div style=`--pageColor : #ff198c `>
+    <section id="header-bg" class="p-project__container">
+      <h1 data-title="DevLinks" id="title_style" class="p-project__title">
+        DevLinks
+      </h1>
+
+      <header class="p-project__header">
+        <Image
+          class="p-project__header-img"
+          src={headerImage}
+          alt="Imagen del proyecto DevLinks desde una laptop"
+          loading="eager"
+        />
+      </header>
+    </section>
+    <div class="p-project__content">
+      <section class="p-project__section">
+        <div class="p-project__section-item">
+          <h2
+            data-title="Tecnologías"
+            id="title_style"
+            class="p-project__subtitle"
+          >
+            Tecnologías
+          </h2>
+          <ul class="p-project__tech-list">
+            <li class="p-project__tech-item">
+              <IconHtml5 />
+            </li>
+            <li class="p-project__tech-item">
+              <IconCss />
+            </li>
+            <li class="p-project__tech-item">
+              <IconJavascript />
+            </li>
+            <li class="p-project__tech-item">
+              <IconReact />
+            </li>
+            <li class="p-project__tech-item">
+              <IconVitejs />
+            </li>
+            <li class="p-project__tech-item p-project__tech-item--less">
+              <IconTailwindcss />
+            </li>
+            <li class="p-project__tech-item">
+              <IconNodejs />
+            </li>
+            <li class="p-project__tech-item">
+              <IconExpressjs />
+            </li>
+            <li class="p-project__tech-item">
+              <IconTypescript />
+            </li>
+            <li class="p-project__tech-item">
+              <IconMongodb />
+            </li>
+            <li class="p-project__tech-item p-project__tech-item--less">
+              <IconZod />
+            </li>
+          </ul>
+        </div>
+        <div class="p-project__section-item p-project__section-item--row">
+          <h2
+            data-title="Descripción"
+            id="title_style"
+            class="p-project__subtitle"
+          >
+            Descripción
+          </h2>
+
+          <div class="p-project__text-wrapper">
+            <p class="p-project__text">
+              DevLinks es una aplicación que permite a los desarrolladores crear
+              páginas de enlaces personalizadas de manera rápida y sencilla.
+              Estas páginas facilitan la presentación de perfiles, proyectos y
+              otras plataformas en un solo lugar, optimizando la presencia en
+              línea de los profesionales. La aplicación ofrece plantillas
+              personalizables y una interfaz intuitiva, lo que permite a los
+              usuarios diseñar páginas atractivas sin necesidad de conocimientos
+              avanzados en desarrollo web.
+            </p>
+          </div>
+        </div>
+        <div class="p-project__section-item p-project__section-item--row">
+          <h2
+            data-title="Rol y responsabilidades"
+            id="title_style"
+            class="p-project__subtitle"
+          >
+            Rol y responsabilidades
+          </h2>
+
+          <div class="p-project__text-wrapper">
+            <p class="p-project__text">
+              En este proyecto, me encargué de la implementación del frontend,
+              asegurando la selección adecuada de dependencias y definiendo una
+              arquitectura óptima para la escala del proyecto. También gestioné
+              la interactividad y la experiencia de usuario para ofrecer una
+              interfaz intuitiva y eficiente.
+            </p>
+            <p class="p-project__text">
+              Además, desarrollé una API aplicando una arquitectura bien
+              estructurada, optimizando el manejo de datos en el servidor y
+              garantizando su correcta persistencia. Esto permitió una
+              comunicación eficiente entre el frontend y el backend, asegurando
+              un rendimiento óptimo y una experiencia fluida para el usuario.
+            </p>
+          </div>
+        </div>
+
+        <div class="p-project__images p-project__section--bgGradient">
+          <div class="p-project__image-wrapper">
+            <img
+              class="p-project__image"
+              src={staticMobilesMock.src}
+              alt="Imagen de la aplicación en dispositivos móviles"
+            />
+          </div>
+          <div class="p-project__image-wrapper">
+            <Image
+              class="p-project__image"
+              src={browserMock}
+              alt="Imagen de la aplicación en navegador web"
+            />
+          </div>
+        </div>
+
+        <div class="p-project__section-item p-project__section-item--row">
+          <h2
+            data-title="Proceso de desarrollo"
+            id="title_style"
+            class="p-project__subtitle"
+          >
+            Proceso de desarrollo
+          </h2>
+
+          <div class="p-project__text-wrapper">
+            <p class="p-project__text">
+              Al comenzar el proyecto, mi primer objetivo fue desglosar su
+              lógica. Para ello, utilicé la herramienta Excalidraw, donde
+              primero definí las entidades y documentos clave. Luego, analicé
+              las opciones de autenticación, evaluando el uso de sesiones o
+              tokens para determinar la mejor estrategia de seguridad.
+            </p>
+
+            <p class="p-project__text">
+              Después, diseñé un diagrama de flujo que representaba el manejo de
+              datos desde la interfaz hasta su interacción con el backend,
+              asegurando un flujo eficiente y bien estructurado. Con base en
+              este análisis, seleccioné las tecnologías más adecuadas y procedí
+              a estudiar su documentación e investigar a fondo sobre su
+              implementación óptima.
+            </p>
+          </div>
+        </div>
+
+        <div class="p-project__section">
+          <div class="p-project__section-item p-project__section-item--row">
+            <h2
+              data-title="Desafíos y soluciones"
+              id="title_style"
+              class="p-project__subtitle"
+            >
+              Desafíos y soluciones
+            </h2>
+
+            <div class="p-project__text-wrapper">
+              <p class="p-project__text">
+                Uno de los desafíos durante el desarrollo fue la validación de
+                los JWT, ya que no existe una forma nativa de invalidar un token
+                que un usuario ya no debería poseer. Para solucionar esto, era
+                necesario implementar un middleware que verificara el token
+                antes de autenticar al usuario o concederle permisos.
+              </p>
+              <p class="p-project__text">
+                Tras investigar y analizar diferentes enfoques, decidí
+                desarrollar un middleware encargado de validar los tokens. Sin
+                embargo, surgió el problema de gestionar tokens que, aunque
+                técnicamente válidos, no debían seguir siéndolo debido a la
+                emisión de nuevos tokens mediante el refresh token. Para ello,
+                consideré dos estrategias: blacklist y whitelist. Finalmente,
+                opté por la whitelist, ya que permitía un control más eficiente
+                sin saturar la base de datos y manteniendo el concepto de
+                staleness de los tokens.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-project__video-wrapper p-project__section--bgGradient">
+            <div class="p-project__video-container">
+              <video
+                width="327"
+                height="168"
+                class="p-project__video"
+                autoplay
+                loop
+                muted
+                playsinline
+              >
+                <source src={video1} type="video/mp4" />
+              </video>
+            </div>
+          </div>
+
+          <div class="p-project__section-item p-project__section-item--texts">
+            <p class="p-project__text p-project__text--resize">
+              Tras investigar y analizar diferentes enfoques, decidí desarrollar
+              un middleware encargado de validar los tokens. Sin embargo, surgió
+              el problema de gestionar tokens que, aunque técnicamente válidos,
+              no debían seguir siéndolo debido a la emisión de nuevos tokens
+              mediante el refresh token. Para ello, consideré dos estrategias:
+              blacklist y whitelist. Finalmente, opté por la whitelist, ya que
+              permitía un control más eficiente sin saturar la base de datos y
+              manteniendo el concepto de staleness de los tokens.
+            </p>
+            <p class="p-project__text p-project__text--resize">
+              Otro desafío que enfrenté fue implementar la persistencia de datos
+              en el lado del cliente para evitar llamadas innecesarias hacia la
+              API. El problema principal era cómo vincular los valores de mi
+              estado global con los almacenados en el localStorage y garantizar
+              que ambos se mantuvieran sincronizados.
+            </p>
+            <p class="p-project__text p-project__text--resize">
+              Después de investigar y revisar la documentación de las
+              tecnologías utilizadas para gestionar el estado, pude encontrar la
+              solución adecuada para lograr la sincronización entre el estado
+              global y el localStorage, optimizando así la eficiencia y
+              reduciendo la dependencia de las llamadas a la API.
+            </p>
+          </div>
+
+          <div class="p-project__video-wrapper p-project__section--bgGradient">
+            <div class="p-project__video-examples">
+              <video
+                class="video-examples__item"
+                autoplay
+                loop
+                muted
+                playsinline
+              >
+                <source src={videoPhone1} type="video/webm" />
+              </video>
+              <video
+                class="video-examples__item"
+                autoplay
+                loop
+                muted
+                playsinline
+              >
+                <source src={videoPhone2} type="video/webm" />
+              </video>
+              <video
+                class="video-examples__item"
+                autoplay
+                loop
+                muted
+                playsinline
+              >
+                <source src={videoPhone3} type="video/webm" />
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-project__section-item p-project__section-item--row">
+          <h2
+            data-title="Lecciones aprendidas"
+            id="title_style"
+            class="p-project__subtitle"
+          >
+            Lecciones aprendidas
+          </h2>
+          <div class="p-project__text-wrapper">
+            <p class="p-project__text">
+              Este proyecto me permitió afianzar el uso de buenas prácticas al
+              escribir código y mantenerme informado sobre arquitectura de
+              software, patrones de diseño y metodologías de desarrollo. Además,
+              me ayudó a desarrollar un mayor nivel de análisis en cuanto a la
+              mejor forma de abordar y solucionar problemas.
+            </p>
+            <p class="p-project__text">
+              Considero que este proyecto me enseñó mucho sobre cómo funcionan
+              las distintas partes de una aplicación, desde el frontend hasta
+              cómo modelar y gestionar el diseño de una base de datos. Aprendí
+              también la importancia de un buen entendimiento y colaboración
+              entre cada componente del sistema, ya que esto facilita la
+              resolución de problemas específicos de manera más eficiente y
+              óptima.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="p-project__footer">
+      <FooterSection />
+    </div>
+  </div>
+</MainLayout>
+
+<style>
+  @media screen and (width >= 768px) {
+    .p-project__tech-item--less {
+      scale: 0.85;
+    }
+  }
+</style>

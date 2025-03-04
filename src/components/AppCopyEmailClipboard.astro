@@ -1,0 +1,94 @@
+---
+import IconEmail from "@assets/icons/IconEmail.astro";
+import AppButton from "./AppButton.astro";
+---
+
+<AppButton id="app-copy-email">
+  <div class="copy-email__wrapper">
+    <div class="copy-email__icon">
+      <IconEmail />
+    </div>
+    Email
+
+    <span id="pop_up" class="copy-email__popUp">Copiado</span>
+  </div>
+</AppButton>
+
+<style>
+  .copy-email__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    position: relative;
+  }
+
+  .copy-email__icon {
+    display: flex;
+    align-items: center;
+    width: 14px;
+    height: 14px;
+  }
+
+  .copy-email__popUp {
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    font-size: 12px;
+    opacity: 0;
+
+    transition:
+      opacity 0.5s ease-in-out,
+      transform 0.5s ease-in-out;
+  }
+
+  .copy-email__popUp--visible {
+    transform: translateY(-170%);
+    opacity: 1;
+  }
+</style>
+
+<script>
+  import { copyToClipboard } from "src/utils/copyToClipboard";
+
+  const btn = document.querySelector("#app-copy-email");
+  const PERSONAL_EMAIL = "diego.pmz08@gmail.com";
+  const CLASS_ANIMATION = "copy-email__popUp--visible";
+  let interval: number | undefined;
+
+  const sequencePopUp = (cloneEl: Element, parent: Element) => {
+    const addInitialClassTimeOut = setTimeout(() => {
+      cloneEl.classList.add(CLASS_ANIMATION);
+    }, 100);
+
+    const removeInitialClassTimeOut = setTimeout(() => {
+      clearTimeout(addInitialClassTimeOut);
+      cloneEl.classList.remove(CLASS_ANIMATION);
+    }, 2000);
+
+    interval = setTimeout(() => {
+      clearTimeout(removeInitialClassTimeOut);
+      parent?.removeChild(cloneEl);
+    }, 5000);
+  };
+
+  const handlePopUp = () => {
+    const popUpWrapper = btn?.querySelector(".copy-email__wrapper");
+    if (!popUpWrapper) return;
+
+    const initialMessageElement = btn?.querySelector("#pop_up");
+    const clone = initialMessageElement?.cloneNode(true);
+    clone && popUpWrapper.appendChild(clone);
+
+    clone && sequencePopUp(clone as Element, popUpWrapper);
+  };
+
+  if (btn) {
+    btn.addEventListener("click", () => {
+      copyToClipboard(PERSONAL_EMAIL);
+      handlePopUp();
+    });
+  } else clearTimeout(interval);
+</script>
